@@ -22,9 +22,11 @@ from Quantitative_trading_back_end import settings
 from api.views.AuthView import AuthView
 from api.views.KImage import get_k_image
 from api.views.GetStock import *
+from api.views.Trading import quantitative_trading_img
 from api.views.data import get_daily
 from api.views.others import count
-from api.views.user import modify_user_information,user_register
+from api.views.stock_pool import *
+from api.views.user import modify_user_information, user_register
 from django.views.static import serve
 
 urlpatterns = [
@@ -41,5 +43,11 @@ urlpatterns = [
     path('get_daily', get_daily),
     path('modify_user_information', modify_user_information),
     path('count', count),
+    path('getHs300', getHs300),
+    path('getMySelect', getMySelect),
+    path('plate', plate),
+    path('smallMoney', smallMoney),
+    path('allstock', allstock),
+    path('quantitative_trading_img', quantitative_trading_img),
     # path('api/login', AuthView.as_view()),
 ]

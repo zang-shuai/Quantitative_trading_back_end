@@ -17,3 +17,9 @@ class UserInfo(models.Model):
 class UserToken(models.Model):
     user = models.OneToOneField(to='UserInfo', on_delete=models.CASCADE)
     token = models.CharField(max_length=64)
+
+
+class UserSelect(models.Model):
+    user = models.ForeignKey(to='UserInfo', on_delete=models.DO_NOTHING)
+    # 自选
+    ts_code = models.CharField(max_length=10)

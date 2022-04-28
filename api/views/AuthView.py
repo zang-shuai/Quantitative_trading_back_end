@@ -41,7 +41,6 @@ class AuthView(APIView):
         except Exception as e:
             ret['code'] = 1002
             ret['msg'] = '请求异常'
-        print('xxxxxxx')
         return JsonResponse(ret)
 
     def get(self, request, *args, **kwargs):
@@ -59,6 +58,7 @@ class AuthView(APIView):
             ret['password'] = obj.password
             ret['phone_number'] = obj.phone_number
             ret['img'] = obj.img
+            ret['id'] = obj.id
             request.session['user_id'] = obj.id
         except Exception as e:
             ret['code'] = 1002

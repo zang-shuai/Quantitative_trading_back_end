@@ -25,7 +25,6 @@ def modify_user_information(request):
             params[col] = request.POST.get(col)
 
     UserInfo.objects.filter(id=int(request.session.get('user_id'))).update(**params)
-    print(request.path)
     return redirect('http://127.0.0.1:8080/#/user_detail')
 
 
@@ -33,14 +32,9 @@ def modify_user_information(request):
 def user_register(request):
     password = request.POST.get('password')
     phone_number = request.POST.get('phone_number')
-    print('------')
-    print(password, phone_number)
-    print(request.POST)
-    print('------')
     users = UserInfo.objects.filter(phone_number=phone_number)
     res = {'code': 1000}
     if len(users) == 0:
-        print('xxxx')
         UserInfo.objects.create(phone_number=phone_number, password=password, user_type=1)
         return JsonResponse(res)
     else:
