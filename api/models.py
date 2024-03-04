@@ -23,3 +23,10 @@ class UserSelect(models.Model):
     user = models.ForeignKey(to='UserInfo', on_delete=models.DO_NOTHING)
     # 自选
     ts_code = models.CharField(max_length=10)
+
+
+class AIStrategy(models.Model):
+    user = models.ForeignKey(to='UserInfo', on_delete=models.DO_NOTHING)
+    # 自选
+    code = models.CharField(max_length=128, default='')
+

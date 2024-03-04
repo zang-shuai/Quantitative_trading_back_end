@@ -22,7 +22,9 @@ from Quantitative_trading_back_end import settings
 from api.views.AuthView import AuthView
 from api.views.KImage import get_k_image
 from api.views.GetStock import *
-from api.views.Trading import quantitative_trading_img
+from api.views.Trading import *
+# from api.views.Trading import quantitative_trading_img, quantitative_trading_code, quantitative_trading_ai, get_ai_list
+from api.views.ai_code import *
 from api.views.data import get_daily
 from api.views.others import count
 from api.views.stock_pool import *
@@ -49,5 +51,14 @@ urlpatterns = [
     path('smallMoney', smallMoney),
     path('allstock', allstock),
     path('quantitative_trading_img', quantitative_trading_img),
+    path('quantitative_trading_code', quantitative_trading_code),
+    path('quantitative_trading_ai', quantitative_trading_ai),
+    path('get_ai_list', get_ai_list),
+    path('add_ai_list', add_ai_list),
+    path('get_ai_code', get_ai_code),
+    path('save_ai_code', save_ai_code),
+    path('delete_ai_code', delete_ai_code),
+    path('run_ai_code', run_ai_code),
+    # path('save_ai_code', save_ai_code),
     # path('api/login', AuthView.as_view()),
 ]

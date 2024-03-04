@@ -13,11 +13,11 @@ from api.utils.auth import Authtication
 from api.utils.encrypt import create_token
 import numpy as np
 
-pro = ts.pro_api()
+pro = ts.pro_api('3cb9379a9a4f25f917b9f7cf73030848f2922944e98a52e3b5686b90')
 
 
 def get_concepts(request):
-    # pro = ts.pro_api()
+    # pro = ts.pro_api('3cb9379a9a4f25f917b9f7cf73030848f2922944e98a52e3b5686b90')
     df = pro.concept()
     n = np.array(df.get(['code', 'name', 'src'])).tolist()
 
